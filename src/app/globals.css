@@ -121,13 +121,14 @@ button { cursor: pointer; }
 
 .oil-feature { background: var(--white); }
 .oil-feature-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .94fr); align-items: center; gap: clamp(48px, 8vw, 118px); }
+.oil-feature-inner > * { min-width: 0; }
 .oil-feature-image { position: relative; min-height: 485px; overflow: hidden; border-radius: 18px; background: #f7f8f7; box-shadow: 0 12px 30px rgba(38,55,71,.06); }
 .oil-feature-image img { object-fit: cover; }
 .image-label { position: absolute; left: 22px; bottom: 20px; display: inline-flex; align-items: center; gap: 10px; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .11em; }
 .image-label::before { content: ""; width: 21px; height: 3px; background: var(--yellow); border-radius: 4px; }
-.oil-feature-copy { padding: 8px 0; }
+.oil-feature-copy { min-width: 0; padding: 8px 0; }
 .oil-feature-copy p { max-width: 540px; color: var(--muted); font-size: 15px; }
-.oil-feature-copy h2 { max-width: 560px; font-size: clamp(38px, 4.2vw, 58px); }
+.oil-feature-copy h2 { max-width: 100%; font-size: clamp(38px, 4.2vw, 58px); overflow-wrap: break-word; }
 .oil-feature-copy ul { max-width: 560px; }
 .oil-feature-copy h2 em, .catalogue-preview-intro h2 em, .page-hero h1 em { color: var(--teal); font-style: italic; }
 .oil-feature-copy ul, .check-list { display: grid; gap: 12px; margin: 25px 0 30px; padding: 0; list-style: none; color: var(--navy); font-size: 13px; font-weight: 700; }
@@ -373,6 +374,8 @@ button { cursor: pointer; }
   .footer-main { grid-template-columns: 1.3fr 1fr 1fr; }
   .footer-brand-column { grid-column: span 3; }
   .about-intro-grid, .contact-page-grid, .detail-grid, .detail-information-grid, .about-speciality-grid { grid-template-columns: 1fr; gap: 42px; }
+  .oil-feature-inner { grid-template-columns: 1fr; gap: 38px; }
+  .oil-feature-image { min-height: 420px; }
   .detail-image { height: 420px; }
   .industry-detail, .industry-detail:nth-child(even) { grid-template-columns: 1fr; gap: 29px; }
   .industry-detail:nth-child(even) .industry-detail-image { order: 0; }
@@ -409,6 +412,7 @@ button { cursor: pointer; }
   .category-strip { grid-template-columns: 1fr; }
   .product-card-image, .product-grid-full .product-card-image { height: 240px; padding-left: 38px; padding-right: 38px; }
   .oil-feature-image { min-height: 310px; }
+  .oil-feature-copy h2 { font-size: 34px; }
   .trust-band-inner { grid-template-columns: 1fr; gap: 0; }
   .trust-band-inner > div, .trust-band-inner > div:nth-child(3) { padding: 14px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.22); }
   .trust-band-inner > div:last-child { border-bottom: 0; }
