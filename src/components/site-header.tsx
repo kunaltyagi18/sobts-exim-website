@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { FileText, Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { ChevronDown, FileText, Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { site } from "@/lib/site";
 
 const navItems = [
@@ -34,11 +34,11 @@ export function SiteHeader() {
         <div className="site-shell nav-inner">
           <Link href="/" className="brand" aria-label="SOBTS EXIM home" onClick={() => setOpen(false)}>
             <span className="brand-icon" aria-hidden="true"><span className="brand-sun" /><span className="brand-ring" /></span>
-            <span className="brand-text"><strong>SOBTS <em>EXIM</em></strong><small>Hydraulic · Pneumatic · Industrial Seals</small></span>
+            <span className="brand-text"><strong>SOBTS <em>EXIM</em></strong><small>Hydraulic &middot; Pneumatic &middot; Industrial Seals</small></span>
           </Link>
 
           <nav id="main-navigation" className={`nav-links ${open ? "nav-links-open" : ""}`} aria-label="Main navigation">
-            {navItems.map((item) => <Link className={pathname === item.href ? "nav-active" : ""} key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}{item.label === "Products" ? <span className="nav-caret">⌄</span> : null}</Link>)}
+            {navItems.map((item) => <Link className={pathname === item.href ? "nav-active" : ""} key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}{item.label === "Products" ? <ChevronDown className="nav-caret" size={15} aria-hidden="true" /> : null}</Link>)}
             <Link className="button button-yellow nav-quote" href="/contact" onClick={() => setOpen(false)}><FileText size={17} /> Get a Quote</Link>
           </nav>
 
