@@ -43,12 +43,12 @@ button { cursor: pointer; }
 .brand-text em { background: var(--yellow); padding: 3px 7px 4px; font-style: italic; margin-left: 3px; border-radius: 5px; }
 .brand-text small { margin-top: 7px; color: var(--navy); font-size: 8px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; }
 .nav-links { display: flex; align-items: center; gap: 29px; font-size: 13px; font-weight: 700; }
-.nav-links > a:not(.button) { position: relative; padding: 34px 0; }
+.nav-links > a:not(.button) { position: relative; display: inline-flex; align-items: center; white-space: nowrap; padding: 34px 0; }
 .nav-links > a:not(.button)::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 25px; height: 2px; background: var(--yellow); transition: right .2s ease; }
 .nav-links > a:not(.button):hover::after { right: 0; }
 .nav-links > a.nav-active { padding: 11px 17px; border-radius: 10px; background: var(--yellow); }
 .nav-links > a.nav-active::after { display: none; }
-.nav-caret { margin-left: 5px; vertical-align: middle; }
+.nav-caret { flex: 0 0 auto; margin-left: 5px; vertical-align: middle; }
 .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid transparent; border-radius: 10px; padding: 0 19px; font-size: 13px; font-weight: 800; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease; }
 .button:hover { transform: translateY(-2px); box-shadow: 0 9px 20px rgba(38,55,71,.12); }
 .button:focus-visible, .nav-links a:focus-visible, .footer-column a:focus-visible, .footer-location:focus-visible, .footer-bottom a:focus-visible { outline: 3px solid rgba(23,107,131,.45); outline-offset: 3px; }
