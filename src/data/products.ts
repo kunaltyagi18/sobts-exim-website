@@ -43,14 +43,6 @@ export const productCategories: Array<{
     alt: "Black hydraulic hoses with silver fittings",
   },
   {
-    slug: "jcb-parts",
-    name: "JCB Spare Parts",
-    shortName: "JCB spares",
-    description: "Replacement parts and service requirements for JCB equipment.",
-    image: "/images/jcb-parts.jpg",
-    alt: "Yellow and black JCB replacement filters and parts",
-  },
-  {
     slug: "tractor-parts",
     name: "Tractor Spare Parts",
     shortName: "Tractor spares",
@@ -83,7 +75,7 @@ export const products: Product[] = [
     category: "oil-seals",
     categoryLabel: category("oil-seals").name,
     shortDescription: "Discuss standard or application-specific profiles with our team.",
-    description: "When a standard replacement is not enough, share your drawing, sample or operating context. SOBTS EXIM can help you discuss the right profile for your sealing requirement without guessing at an unverified specification.",
+    description: "When a standard replacement is not enough, share your drawing, sample or operating context. Shree Om Balaji Trader and Supplier can help you discuss the right profile for your sealing requirement without guessing at an unverified specification.",
     image: "/images/oil-seals.jpg",
     alt: "Different coloured oil seals for industrial use",
     features: ["Application-based product discussion", "Custom requirement enquiries", "Clear, photo-led identification support"],
@@ -148,20 +140,6 @@ export const products: Product[] = [
     catalogueLabel: "Download hose catalogue",
   },
   {
-    slug: "jcb-replacement-parts",
-    name: "JCB Replacement Parts",
-    category: "jcb-parts",
-    categoryLabel: category("jcb-parts").name,
-    shortDescription: "JCB parts enquiries for service, repair and replacement work.",
-    description: "Send the machine model, part marking or a photo for help with a JCB spare part enquiry. Product matching is handled around the information available for your machine and the part required.",
-    image: "/images/jcb-parts.jpg",
-    alt: "JCB filters and spare parts",
-    features: ["Service and replacement part enquiries", "Identification from model, marking or photo", "Reference catalogue available to download"],
-    applications: ["Backhoe loaders", "Construction machinery", "Workshop servicing"],
-    catalogueHref: "/catalogues/jcb-tractor-spare-parts.pdf",
-    catalogueLabel: "Download spares catalogue",
-  },
-  {
     slug: "tractor-spare-parts",
     name: "Tractor Spare Parts",
     category: "tractor-parts",
@@ -172,8 +150,6 @@ export const products: Product[] = [
     alt: "Steel gears and tractor spare parts",
     features: ["Agricultural spare part enquiries", "Identification support from model or photo", "Reference catalogue available to download"],
     applications: ["Farm tractors", "Agricultural implements", "Maintenance workshops"],
-    catalogueHref: "/catalogues/jcb-tractor-spare-parts.pdf",
-    catalogueLabel: "Download spares catalogue",
   },
 ];
 

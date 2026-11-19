@@ -3,7 +3,6 @@ export type ProductCategory =
   | "hydraulic-seals"
   | "pneumatic-seals"
   | "hydraulic-hoses"
-  | "jcb-parts"
   | "tractor-parts";
 
 export type Product = {

@@ -7,7 +7,7 @@ export const industries: Industry[] = [
     description: "Seals, hoses and service parts for equipment that works under demanding site conditions.",
     image: "/images/construction.jpg",
     alt: "Yellow construction equipment working outdoors",
-    products: ["Oil seals", "Hydraulic seals", "Hydraulic hoses & fittings", "JCB spare parts"],
+    products: ["Oil seals", "Hydraulic seals", "Hydraulic hoses & fittings"],
   },
   {
     name: "Agricultural Machinery",
@@ -31,6 +31,6 @@ export const industries: Industry[] = [
     description: "Application-led product conversations for cylinders, hoses, fittings and hydraulic assemblies.",
     image: "/images/hydraulic-systems.jpg",
     alt: "Hydraulic hoses and steel fittings in a workshop",
-    products: ["Hydraulic seals", "Hydraulic hoses & fittings", "Oil seals", "JCB spare parts"],
+    products: ["Hydraulic seals", "Hydraulic hoses & fittings", "Oil seals"],
   },
 ];

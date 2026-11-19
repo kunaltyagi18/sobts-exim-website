@@ -1,14 +1,24 @@
 import Image from "next/image";
-import { ArrowDownToLine, FileText } from "lucide-react";
+import { ArrowDownToLine, BadgeCheck, Droplets, FileText, Layers3, ShieldCheck } from "lucide-react";
 import { catalogues } from "@/data/catalogues";
 
 type Catalogue = (typeof catalogues)[number];
 
-export function CatalogueCard({ catalogue, index }: { catalogue: Catalogue; index: number }) {
+export function CatalogueCard({ catalogue }: { catalogue: Catalogue }) {
+  const featureIcons = [ShieldCheck, Droplets, Layers3];
+
   return (
-    <a className="catalogue-card" href={catalogue.href} download>
-      <div className="catalogue-card-image"><Image src={catalogue.image} alt={catalogue.alt} fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
-      <div className="catalogue-card-copy"><div className="catalogue-card-meta"><span>{String(index + 1).padStart(2, "0")} · {catalogue.tag}</span><span className="pdf-badge"><FileText size={13} /> PDF</span></div><h3>{catalogue.title}</h3><p>{catalogue.description}</p><span className="catalogue-download-button"><ArrowDownToLine size={17} /> Download PDF</span></div>
+    <a className={`catalogue-card catalogue-card-${catalogue.tone}`} href={catalogue.href} download>
+      <div className="catalogue-card-image">
+        <Image src={catalogue.image} alt={catalogue.alt} fill sizes="(max-width: 760px) 100vw, 50vw" />
+        <div className="catalogue-card-cover">
+          <div className="catalogue-card-cover-kicker">{catalogue.code} - {catalogue.tag}</div>
+          <h3>{catalogue.title}</h3>
+          <p>{catalogue.description}</p>
+          <div className="catalogue-feature-strip">{catalogue.features.map((feature, featureIndex) => { const Icon = featureIcons[featureIndex] ?? BadgeCheck; return <span key={feature}><Icon size={16} /><small>{feature}</small></span>; })}</div>
+        </div>
+      </div>
+      <div className="catalogue-card-copy"><div className="catalogue-card-meta"><span>{catalogue.code} - {catalogue.tag}</span><span className="pdf-badge"><FileText size={13} /> PDF</span></div><h3>{catalogue.title}</h3><p>{catalogue.description}</p><span className="catalogue-download-button"><ArrowDownToLine size={19} /> Download PDF</span></div>
     </a>
   );
 }

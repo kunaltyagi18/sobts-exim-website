@@ -27,14 +27,15 @@ export function SiteHeader() {
           <div className="topbar-actions">
             <a href={site.phoneHref}><Phone size={15} /> {site.phone}</a>
             <a href={site.emailHref}><Mail size={15} /> {site.email}</a>
+            <a href={site.secondaryEmailHref}><Mail size={15} /> {site.secondaryEmail}</a>
           </div>
         </div>
       </div>
       <header className="site-header">
         <div className="site-shell nav-inner">
-          <Link href="/" className="brand" aria-label="SOBTS EXIM home" onClick={() => setOpen(false)}>
-            <span className="brand-icon" aria-hidden="true"><span className="brand-sun" /><span className="brand-ring" /></span>
-            <span className="brand-text"><strong>SOBTS <em>EXIM</em></strong><small>Hydraulic &middot; Pneumatic &middot; Industrial Seals</small></span>
+          <Link href="/" className="brand" aria-label={`${site.name} home`} onClick={() => setOpen(false)}>
+            <span className="brand-placeholder" aria-hidden="true">LOGO</span>
+            <span className="brand-text"><strong>Shree Om Balaji</strong><em>Trader and Supplier</em><small>Trading name: SOBTS EXIM</small></span>
           </Link>
 
           <nav id="main-navigation" className={`nav-links ${open ? "nav-links-open" : ""}`} aria-label="Main navigation">
