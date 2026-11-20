@@ -1,0 +1,52 @@
+import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ContactCta } from "@/components/contact-cta";
+import { SectionHeading } from "@/components/section-heading";
+import { createTranslator } from "@/lib/i18n";
+import { getRequestLocale } from "@/lib/server-locale";
+import { site, whatsappHref } from "@/lib/site";
+
+export const metadata = { title: "Contact Us", description: "Contact Shree Om Balaji Trader and Supplier in Ghaziabad for oil seals, hydraulic seals, hoses and Tractor Spare Parts enquiries." };
+
+export default async function ContactPage() {
+  const t = createTranslator(await getRequestLocale());
+
+  return (
+    <main>
+      <section className="page-hero page-hero-contact">
+        <div className="site-shell page-hero-inner">
+          <span className="eyebrow"><span className="eyebrow-line" /> {t("CONTACT THE COMPANY")}</span>
+          <h1>{t("Tell us what")}<br /><em>{t("you need to keep moving.")}</em></h1>
+          <p>{t("Send the part name, dimensions, machine model, marking or a photo. We will help you make the product enquiry more specific.")}</p>
+        </div>
+      </section>
+      <section className="section contact-page">
+        <div className="site-shell contact-page-grid">
+          <div className="contact-page-copy">
+            <SectionHeading eyebrow={t("GET IN TOUCH")} title={t("A direct line to the right product conversation.")} description={t("Choose the channel that works for you. WhatsApp is best when you want to share a photo, marking or catalogue page.")} />
+            <div className="contact-methods">
+              <a href={whatsappHref()} target="_blank" rel="noreferrer"><span className="contact-method-icon"><MessageCircle /></span><span><small>{t("WhatsApp enquiry")}</small><strong>{t("Message our team")}</strong></span><ArrowUpRight size={18} /></a>
+              <a href={site.phoneHref}><span className="contact-method-icon"><Phone /></span><span><small>{t("Indian contact number")}</small><strong>{site.phone}</strong></span><ArrowUpRight size={18} /></a>
+              <a href={site.emailHref}><span className="contact-method-icon"><Mail /></span><span><small>{t("Email")}</small><strong>{site.email}</strong></span><ArrowUpRight size={18} /></a>
+              <a href={site.secondaryEmailHref}><span className="contact-method-icon"><Mail /></span><span><small>{t("Email")}</small><strong>{site.secondaryEmail}</strong></span><ArrowUpRight size={18} /></a>
+              <a className="contact-method-static" href={site.germanWhatsappHref} target="_blank" rel="noreferrer"><span className="contact-method-icon"><MessageCircle /></span><span><small>{t("German contact")}</small><strong>{site.germanContact}</strong><em>{site.germanContactNote}</em></span><ArrowUpRight size={18} /></a>
+              <a href={site.mapHref} target="_blank" rel="noreferrer"><span className="contact-method-icon"><MapPin /></span><span><small>{t("Visit / locate us")}</small><strong>Raj Nagar Extension, Ghaziabad</strong></span><ArrowUpRight size={18} /></a>
+            </div>
+          </div>
+          <div className="contact-card contact-enquiry-card">
+            <span className="eyebrow"><span className="eyebrow-line" /> {t("HOW TO ENQUIRE")}</span>
+            <h2>{t("Share what you already know.")}</h2>
+            <p className="contact-card-lede">{t("You do not need a perfect specification to begin. Any one of these details gives us a useful starting point.")}</p>
+            <div className="contact-steps">
+              <div><span>01</span><p><strong>{t("Product or part name")}</strong><small>{t("Tell us what you need, or share the existing marking.")}</small></p></div>
+              <div><span>02</span><p><strong>{t("Machine context")}</strong><small>{t("Share the equipment, cylinder or application.")}</small></p></div>
+              <div><span>03</span><p><strong>{t("Photo, size or drawing")}</strong><small>{t("Send a clear photo, dimensions or catalogue page.")}</small></p></div>
+            </div>
+            <a className="button button-yellow" href={whatsappHref()} target="_blank" rel="noreferrer">{t("Start WhatsApp Enquiry")} <MessageCircle size={18} /></a>
+            <div className="contact-card-note">{t("Product fit, availability and commercial details are confirmed directly during the enquiry.")}</div>
+          </div>
+        </div>
+      </section>
+      <ContactCta />
+    </main>
+  );
+}

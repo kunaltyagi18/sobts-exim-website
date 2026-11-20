@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">South Africa flag</title>
+  <desc id="desc">Flag of South Africa</desc>
+  <path fill="#e03c31" d="M0 0h900v300H450z"/>
+  <path fill="#001489" d="M0 600h900V300H450z"/>
+  <path fill="#fff" d="M0 0v110l330 190L0 490v110l450-260h450V270H450z"/>
+  <path fill="#ffb81c" d="M0 70v80l270 150L0 450v80l345-190h555v-70H345z"/>
+  <path fill="#007749" d="M0 0v175l225 125L0 425v175l345-190h555V190H345z"/>
+  <path fill="#000" d="M0 225v150l135-75z"/>
+</svg>
