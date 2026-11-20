@@ -8,6 +8,7 @@ import { Check, ChevronDown, FileText, Globe2, Mail, MapPin, Menu, Phone, X } fr
 import { site } from "@/lib/site";
 import { isLocale, localeLabels, locales } from "@/lib/i18n";
 import { useTranslation } from "@/components/language-provider";
+import { productCategories } from "@/data/products";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -70,8 +71,21 @@ function LanguageMenu({ locale, onChange, mobile = false }: { locale: string; on
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const productsMenuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const { locale, t } = useTranslation();
+
+  useEffect(() => {
+    function closeProductsMenu(event: MouseEvent) {
+      if (productsMenuRef.current && !productsMenuRef.current.contains(event.target as Node)) {
+        setProductsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", closeProductsMenu);
+    return () => document.removeEventListener("mousedown", closeProductsMenu);
+  }, []);
 
   function changeLanguage(value: string) {
     if (!isLocale(value)) return;
@@ -103,7 +117,17 @@ export function SiteHeader() {
           </Link>
 
           <nav id="main-navigation" className={`nav-links ${open ? "nav-links-open" : ""}`} aria-label={t("Main navigation")}>
-            {navItems.map((item) => <Link className={pathname === item.href ? "nav-active" : ""} key={item.href} href={item.href} onClick={() => setOpen(false)}>{t(item.label)}{item.label === "Products" ? <ChevronDown className="nav-caret" size={15} aria-hidden="true" /> : null}</Link>)}
+            {navItems.map((item) => item.label === "Products" ? (
+              <div className="nav-products-menu" key={item.href} ref={productsMenuRef}>
+                <button className={pathname.startsWith(item.href) ? "nav-active nav-products-trigger" : "nav-products-trigger"} type="button" aria-haspopup="menu" aria-expanded={productsOpen} onClick={() => setProductsOpen((value) => !value)}>
+                  {t(item.label)} <ChevronDown className={productsOpen ? "nav-caret nav-caret-open" : "nav-caret"} size={15} aria-hidden="true" />
+                </button>
+                <div className={productsOpen ? "nav-products-dropdown nav-products-dropdown-open" : "nav-products-dropdown"} aria-label={t("Product categories")} role="menu">
+                  <Link href="/products" role="menuitem" onClick={() => { setOpen(false); setProductsOpen(false); }}>{t("All products")}</Link>
+                  {productCategories.map((category) => <Link key={category.slug} href={`/products?category=${category.slug}`} role="menuitem" onClick={() => { setOpen(false); setProductsOpen(false); }}>{t(category.name)}</Link>)}
+                </div>
+              </div>
+            ) : <Link className={pathname === item.href ? "nav-active" : ""} key={item.href} href={item.href} onClick={() => setOpen(false)}>{t(item.label)}</Link>)}
             <Link className="button button-yellow nav-quote" href="/contact" onClick={() => setOpen(false)}><FileText size={17} /> {t("Get a Quote")}</Link>
             <LanguageMenu locale={locale} onChange={changeLanguage} />
           </nav>

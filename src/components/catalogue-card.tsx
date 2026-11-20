@@ -12,7 +12,7 @@ export function CatalogueCard({ catalogue }: { catalogue: Catalogue }) {
   const featureIcons = [ShieldCheck, Droplets, Layers3];
 
   return (
-    <a className={`catalogue-card catalogue-card-${catalogue.tone}`} href={catalogue.href} download>
+    <a id={`catalogue-${catalogue.code.toLowerCase()}`} className={`catalogue-card catalogue-card-${catalogue.tone}`} href={catalogue.href} download>
       <div className="catalogue-card-image">
         <Image src={catalogue.image} alt={catalogue.alt} fill sizes="(max-width: 760px) 100vw, 50vw" />
         <div className="catalogue-card-cover">

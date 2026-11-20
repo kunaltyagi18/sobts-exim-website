@@ -22,7 +22,7 @@ const homeProductRange = [
   { name: "Gaskets", description: "Precision gaskets & sealing solutions", image: "/images/hydraulic-seals.jpg", alt: "Hydraulic sealing profiles", href: "/products/tractor-gaskets", priority: false },
   { name: "Bearings", description: "Smooth motion & reliable fitment", image: "/images/tractor-parts.jpg", alt: "Machined tractor gears and bearing components", href: "/products/tractor-bearings", priority: false },
   { name: "Hydraulic Components", description: "Hoses, fittings & hydraulic solutions", image: "/images/hydraulic-systems.jpg", alt: "Hydraulic power unit and components", href: "/products?category=hydraulic-hoses", priority: false },
-  { name: "Chains & Sprockets", description: "Drivetrain parts for working equipment", image: "/images/tractor-parts.jpg", alt: "Tractor gears and drivetrain components", href: "/products/tractor-gear-parts", priority: false },
+  { name: "Chains & Sprockets", description: "Drivetrain parts for working equipment", image: "/images/chains-sprockets.png", alt: "Metal chains and sprockets", href: "/products/tractor-gear-parts", priority: false },
   { name: "Filters", description: "Filters & maintenance components", image: "/images/jcb-parts.jpg", alt: "Filters and JCB spare parts", href: "/products/tractor-filters", priority: false },
 ] as const;
 
